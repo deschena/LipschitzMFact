@@ -5,7 +5,7 @@ import numpy as np
 import torch
 from torch import nn
 from torch import optim
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import DataLoader
 
 from matplotlib import pyplot as plt
 # =================================================================================================
@@ -82,7 +82,6 @@ def plot_init_comparison(display_perf=False):
     best_lr_index, best_lrs = get_best_lrs(all_perfs_tensor, lrs)
     # Actual performance
     #torch.min(all_perfs_tensor, dim)
-    print("nb lrs:", len(lrs))
     if display_perf:
         for i, l in enumerate(labels):
             print(l)
@@ -109,7 +108,6 @@ def plot_init_comparison(display_perf=False):
     plt.savefig(IMG_DIR + "perf_all_lower.png")
     
     plt.clf()
-    print(list(enumerate(labels)))
     plt.title("Performance of medium regime")
     # Normal initialization is at the begining of the tensor
     plt.loglog(x, all_perfs_tensor[best_lr_index[0], 0, 0, :], label=labels[0])
@@ -311,9 +309,9 @@ def compare_grid_and_lipschitz():
 # =================================================================================================
 
 def main():
-
+    # Data for experiments is already available for ease; Just draws the plots
     #compare_inits()
-    #plot_init_comparison()
+    plot_init_comparison()
 
     #estimate_grads_and_dist_to_opt()
     #compare_grid_and_lipschitz()
