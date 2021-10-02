@@ -2,7 +2,7 @@
 Justin Deschenaux, Guillaume Follonier and Jun Han
 
 ## Goal
-Check whether the convergence analysis of SGD on Lipschitz continuous and convex function on convex domain can guide the choice of the stepsize in training, and whether it is better than performing a grid search on this hyperparameter.
+Check whether the convergence analysis of SGD on Lipschitz continuous and convex function on convex domain can guide the choice of the stepsize in training of matrix factorization models (non-convex), and whether it is better than performing a grid search on the hyperparameter space.
 
 
 ## Files
